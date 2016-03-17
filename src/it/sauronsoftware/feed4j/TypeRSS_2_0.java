@@ -177,6 +177,12 @@ class TypeRSS_2_0 extends TypeAbstract {
 								}
 							}
 							item.setGUID(evalue);
+						} else if (ename.equals("pubDate")) {
+						   try {
+						      item.setPubDate(Constants.RFC_822_DATE_FORMAT.parse(evalue));
+						   } catch (ParseException e) {
+						       ;
+						   }
 						}
 					}
 				} else {
